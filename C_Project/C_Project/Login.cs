@@ -12,9 +12,15 @@ namespace C_Project
 {
     public partial class Login : Form
     {
+        public static int CurrentAccoutId { get; set; }
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

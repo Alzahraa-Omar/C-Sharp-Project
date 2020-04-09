@@ -12,6 +12,7 @@ namespace C_Project
 {
     public partial class Home : Form
     {
+        Edit EditForm = new Edit();
         public Home()
         {
             InitializeComponent();
@@ -25,6 +26,11 @@ namespace C_Project
         private void lbl_home_hotDeal_totalBudget_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_home_profile_edit_Click(object sender, EventArgs e)
+        {
+            EditForm.ShowDialog();
         }
     }
 }

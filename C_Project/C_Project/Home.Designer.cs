@@ -32,12 +32,14 @@
             this.tabHome = new System.Windows.Forms.TabPage();
             this.tab_News = new System.Windows.Forms.TabPage();
             this.tab_HotDeal = new System.Windows.Forms.TabPage();
-            this.tab_Profile = new System.Windows.Forms.TabPage();
-            this.lbl_home_hotdeal_name = new System.Windows.Forms.Label();
-            this.lbl_home_hotDeal_here = new System.Windows.Forms.Label();
             this.lbl_home_hotDeal_totalBudget = new System.Windows.Forms.Label();
+            this.lbl_home_hotDeal_here = new System.Windows.Forms.Label();
+            this.lbl_home_hotdeal_name = new System.Windows.Forms.Label();
+            this.tab_Profile = new System.Windows.Forms.TabPage();
+            this.btn_home_profile_edit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_HotDeal.SuspendLayout();
+            this.tab_Profile.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -49,7 +51,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(624, 492);
+            this.tabControl1.Size = new System.Drawing.Size(613, 478);
             this.tabControl1.TabIndex = 0;
             // 
             // tabHome
@@ -57,7 +59,7 @@
             this.tabHome.Location = new System.Drawing.Point(4, 25);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(616, 463);
+            this.tabHome.Size = new System.Drawing.Size(605, 449);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
@@ -84,35 +86,6 @@
             this.tab_HotDeal.Text = "Hot Deal";
             this.tab_HotDeal.UseVisualStyleBackColor = true;
             // 
-            // tab_Profile
-            // 
-            this.tab_Profile.Location = new System.Drawing.Point(4, 25);
-            this.tab_Profile.Name = "tab_Profile";
-            this.tab_Profile.Size = new System.Drawing.Size(616, 463);
-            this.tab_Profile.TabIndex = 3;
-            this.tab_Profile.Text = "Profile";
-            this.tab_Profile.UseVisualStyleBackColor = true;
-            // 
-            // lbl_home_hotdeal_name
-            // 
-            this.lbl_home_hotdeal_name.AutoSize = true;
-            this.lbl_home_hotdeal_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_home_hotdeal_name.Location = new System.Drawing.Point(18, 18);
-            this.lbl_home_hotdeal_name.Name = "lbl_home_hotdeal_name";
-            this.lbl_home_hotdeal_name.Size = new System.Drawing.Size(94, 32);
-            this.lbl_home_hotdeal_name.TabIndex = 0;
-            this.lbl_home_hotdeal_name.Text = "Name";
-            // 
-            // lbl_home_hotDeal_here
-            // 
-            this.lbl_home_hotDeal_here.AutoSize = true;
-            this.lbl_home_hotDeal_here.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_home_hotDeal_here.Location = new System.Drawing.Point(20, 83);
-            this.lbl_home_hotDeal_here.Name = "lbl_home_hotDeal_here";
-            this.lbl_home_hotDeal_here.Size = new System.Drawing.Size(363, 29);
-            this.lbl_home_hotDeal_here.TabIndex = 1;
-            this.lbl_home_hotDeal_here.Text = "Here is a HOT DEAL with your";
-            // 
             // lbl_home_hotDeal_totalBudget
             // 
             this.lbl_home_hotDeal_totalBudget.AutoSize = true;
@@ -124,17 +97,58 @@
             this.lbl_home_hotDeal_totalBudget.Text = "Total Budget";
             this.lbl_home_hotDeal_totalBudget.Click += new System.EventHandler(this.lbl_home_hotDeal_totalBudget_Click);
             // 
+            // lbl_home_hotDeal_here
+            // 
+            this.lbl_home_hotDeal_here.AutoSize = true;
+            this.lbl_home_hotDeal_here.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_home_hotDeal_here.Location = new System.Drawing.Point(20, 83);
+            this.lbl_home_hotDeal_here.Name = "lbl_home_hotDeal_here";
+            this.lbl_home_hotDeal_here.Size = new System.Drawing.Size(363, 29);
+            this.lbl_home_hotDeal_here.TabIndex = 1;
+            this.lbl_home_hotDeal_here.Text = "Here is a HOT DEAL with your";
+            // 
+            // lbl_home_hotdeal_name
+            // 
+            this.lbl_home_hotdeal_name.AutoSize = true;
+            this.lbl_home_hotdeal_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_home_hotdeal_name.Location = new System.Drawing.Point(18, 18);
+            this.lbl_home_hotdeal_name.Name = "lbl_home_hotdeal_name";
+            this.lbl_home_hotdeal_name.Size = new System.Drawing.Size(94, 32);
+            this.lbl_home_hotdeal_name.TabIndex = 0;
+            this.lbl_home_hotdeal_name.Text = "Name";
+            // 
+            // tab_Profile
+            // 
+            this.tab_Profile.Controls.Add(this.btn_home_profile_edit);
+            this.tab_Profile.Location = new System.Drawing.Point(4, 25);
+            this.tab_Profile.Name = "tab_Profile";
+            this.tab_Profile.Size = new System.Drawing.Size(605, 449);
+            this.tab_Profile.TabIndex = 3;
+            this.tab_Profile.Text = "Profile";
+            this.tab_Profile.UseVisualStyleBackColor = true;
+            // 
+            // btn_home_profile_edit
+            // 
+            this.btn_home_profile_edit.Location = new System.Drawing.Point(441, 389);
+            this.btn_home_profile_edit.Name = "btn_home_profile_edit";
+            this.btn_home_profile_edit.Size = new System.Drawing.Size(123, 44);
+            this.btn_home_profile_edit.TabIndex = 0;
+            this.btn_home_profile_edit.Text = "Edit Profile";
+            this.btn_home_profile_edit.UseVisualStyleBackColor = true;
+            this.btn_home_profile_edit.Click += new System.EventHandler(this.btn_home_profile_edit_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 516);
+            this.ClientSize = new System.Drawing.Size(648, 514);
             this.Controls.Add(this.tabControl1);
             this.Name = "Home";
             this.Text = "Home";
             this.tabControl1.ResumeLayout(false);
             this.tab_HotDeal.ResumeLayout(false);
             this.tab_HotDeal.PerformLayout();
+            this.tab_Profile.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,5 +163,6 @@
         private System.Windows.Forms.Label lbl_home_hotDeal_here;
         private System.Windows.Forms.Label lbl_home_hotdeal_name;
         private System.Windows.Forms.TabPage tab_Profile;
+        private System.Windows.Forms.Button btn_home_profile_edit;
     }
 }

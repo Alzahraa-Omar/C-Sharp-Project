@@ -9,7 +9,6 @@ namespace C_Project
     [Table("Category")]
     public partial class Category
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

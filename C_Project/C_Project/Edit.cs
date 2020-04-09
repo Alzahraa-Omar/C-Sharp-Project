@@ -16,5 +16,11 @@ namespace C_Project
         {
             InitializeComponent();
         }
+
+        private void btn_edit_addNewCategory_Click(object sender, EventArgs e)
+        {
+            AddCategory AddCategoryForm = new AddCategory();
+            AddCategoryForm.ShowDialog();
+        }
     }
 }

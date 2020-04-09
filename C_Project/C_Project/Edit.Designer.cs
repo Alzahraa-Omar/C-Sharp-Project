@@ -32,15 +32,11 @@
             this.comboBox_edit_categories = new System.Windows.Forms.ComboBox();
             this.lbl_edit_removeCategory = new System.Windows.Forms.Label();
             this.btn_edit_removeCategory = new System.Windows.Forms.Button();
-            this.btn_edit_addCategory = new System.Windows.Forms.Button();
             this.textBox_edit_resetBudget = new System.Windows.Forms.TextBox();
             this.lbl_edit_resetBudget = new System.Windows.Forms.Label();
             this.btn_edit_resetBudget = new System.Windows.Forms.Button();
             this.btn_edit_save = new System.Windows.Forms.Button();
-            this.lbl_edit_addCategory = new System.Windows.Forms.Label();
-            this.textBox_edit_addedCategory = new System.Windows.Forms.TextBox();
-            this.lbl_edit_addCost = new System.Windows.Forms.Label();
-            this.textBox_edit_addCost = new System.Windows.Forms.TextBox();
+            this.btn_edit_addNewCategory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_edit_username
@@ -81,17 +77,6 @@
             this.btn_edit_removeCategory.Text = "Remove Category";
             this.btn_edit_removeCategory.UseVisualStyleBackColor = false;
             // 
-            // btn_edit_addCategory
-            // 
-            this.btn_edit_addCategory.BackColor = System.Drawing.Color.Teal;
-            this.btn_edit_addCategory.ForeColor = System.Drawing.Color.MintCream;
-            this.btn_edit_addCategory.Location = new System.Drawing.Point(435, 387);
-            this.btn_edit_addCategory.Name = "btn_edit_addCategory";
-            this.btn_edit_addCategory.Size = new System.Drawing.Size(130, 29);
-            this.btn_edit_addCategory.TabIndex = 6;
-            this.btn_edit_addCategory.Text = "Add Category";
-            this.btn_edit_addCategory.UseVisualStyleBackColor = false;
-            // 
             // textBox_edit_resetBudget
             // 
             this.textBox_edit_resetBudget.Location = new System.Drawing.Point(215, 183);
@@ -131,37 +116,15 @@
             this.btn_edit_save.Text = "Save";
             this.btn_edit_save.UseVisualStyleBackColor = false;
             // 
-            // lbl_edit_addCategory
+            // btn_edit_addNewCategory
             // 
-            this.lbl_edit_addCategory.AutoSize = true;
-            this.lbl_edit_addCategory.Location = new System.Drawing.Point(64, 372);
-            this.lbl_edit_addCategory.Name = "lbl_edit_addCategory";
-            this.lbl_edit_addCategory.Size = new System.Drawing.Size(94, 17);
-            this.lbl_edit_addCategory.TabIndex = 3;
-            this.lbl_edit_addCategory.Text = "Add Category";
-            // 
-            // textBox_edit_addedCategory
-            // 
-            this.textBox_edit_addedCategory.Location = new System.Drawing.Point(215, 372);
-            this.textBox_edit_addedCategory.Name = "textBox_edit_addedCategory";
-            this.textBox_edit_addedCategory.Size = new System.Drawing.Size(192, 22);
-            this.textBox_edit_addedCategory.TabIndex = 4;
-            // 
-            // lbl_edit_addCost
-            // 
-            this.lbl_edit_addCost.AutoSize = true;
-            this.lbl_edit_addCost.Location = new System.Drawing.Point(64, 416);
-            this.lbl_edit_addCost.Name = "lbl_edit_addCost";
-            this.lbl_edit_addCost.Size = new System.Drawing.Size(65, 17);
-            this.lbl_edit_addCost.TabIndex = 11;
-            this.lbl_edit_addCost.Text = "Add Cost";
-            // 
-            // textBox_edit_addCost
-            // 
-            this.textBox_edit_addCost.Location = new System.Drawing.Point(215, 413);
-            this.textBox_edit_addCost.Name = "textBox_edit_addCost";
-            this.textBox_edit_addCost.Size = new System.Drawing.Size(192, 22);
-            this.textBox_edit_addCost.TabIndex = 12;
+            this.btn_edit_addNewCategory.Location = new System.Drawing.Point(226, 361);
+            this.btn_edit_addNewCategory.Name = "btn_edit_addNewCategory";
+            this.btn_edit_addNewCategory.Size = new System.Drawing.Size(145, 49);
+            this.btn_edit_addNewCategory.TabIndex = 11;
+            this.btn_edit_addNewCategory.Text = "Add New Category";
+            this.btn_edit_addNewCategory.UseVisualStyleBackColor = true;
+            this.btn_edit_addNewCategory.Click += new System.EventHandler(this.btn_edit_addNewCategory_Click);
             // 
             // Edit
             // 
@@ -169,16 +132,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(590, 552);
-            this.Controls.Add(this.textBox_edit_addCost);
-            this.Controls.Add(this.lbl_edit_addCost);
+            this.Controls.Add(this.btn_edit_addNewCategory);
             this.Controls.Add(this.btn_edit_save);
             this.Controls.Add(this.btn_edit_resetBudget);
             this.Controls.Add(this.lbl_edit_resetBudget);
             this.Controls.Add(this.textBox_edit_resetBudget);
-            this.Controls.Add(this.btn_edit_addCategory);
             this.Controls.Add(this.btn_edit_removeCategory);
-            this.Controls.Add(this.textBox_edit_addedCategory);
-            this.Controls.Add(this.lbl_edit_addCategory);
             this.Controls.Add(this.lbl_edit_removeCategory);
             this.Controls.Add(this.comboBox_edit_categories);
             this.Controls.Add(this.lbl_edit_username);
@@ -196,14 +155,10 @@
         private System.Windows.Forms.ComboBox comboBox_edit_categories;
         private System.Windows.Forms.Label lbl_edit_removeCategory;
         private System.Windows.Forms.Button btn_edit_removeCategory;
-        private System.Windows.Forms.Button btn_edit_addCategory;
         private System.Windows.Forms.TextBox textBox_edit_resetBudget;
         private System.Windows.Forms.Label lbl_edit_resetBudget;
         private System.Windows.Forms.Button btn_edit_resetBudget;
         private System.Windows.Forms.Button btn_edit_save;
-        private System.Windows.Forms.Label lbl_edit_addCategory;
-        private System.Windows.Forms.TextBox textBox_edit_addedCategory;
-        private System.Windows.Forms.Label lbl_edit_addCost;
-        private System.Windows.Forms.TextBox textBox_edit_addCost;
+        private System.Windows.Forms.Button btn_edit_addNewCategory;
     }
 }

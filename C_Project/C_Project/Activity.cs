@@ -9,7 +9,6 @@ namespace C_Project
     [Table("Activity")]
     public partial class Activity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

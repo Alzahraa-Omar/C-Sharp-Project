@@ -16,7 +16,6 @@ namespace C_Project
             Categories = new HashSet<Category>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
