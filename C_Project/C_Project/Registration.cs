@@ -39,28 +39,73 @@ namespace C_Project
 
         }
 
-        private void btn_regist_regist_Click(object sender, EventArgs e)
+
+        public bool fun()
         {
-            
-            foreach (var item in context.Accounts)
+            var user = from n in context.Accounts
+                       select n;
+            bool res = false;
+
+            foreach (var item in user)
             {
                 if (item.AccountName == textBox_regist_username.Text)
-                { MessageBox.Show("Used Username"); }
-                else
+                { res = true; }
+                else { res = false; }
+            }
+            return res;
+        }
+
+        private void btn_regist_regist_Click(object sender, EventArgs e)
+        {
+
+            if (!fun())
+            {
+
+                Account addedAccount = new Account()
                 {
-                    Account addedAccount = new Account()
-                    {
-                        AccountName = textBox_regist_username.Text,
-                        AccountPassword = textBox_regist_password.Text,
-                        TotalBudget = float.Parse(textBox_regist_totalBudget.Text)
-                    };
-                    context.Accounts.Add(addedAccount);
-                    context.SaveChanges();
-                }
+                    AccountName = textBox_regist_username.Text,
+                    AccountPassword = textBox_regist_password.Text,
+                    TotalBudget = float.Parse(textBox_regist_totalBudget.Text)
+                };
+                context.Accounts.Add(addedAccount);
+                context.SaveChanges();
                 this.Hide();
                 HF.Show();
+
             }
+            else { MessageBox.Show("Used Username"); }
+         
             
+        }
+
+        private void Registration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_regist_username_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))//letter
+            {
+                e.Handled = true;
+                label2.Text = "This is a character only field";
+            }
+        }
+
+        private void textBox_regist_password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_regist_totalBudget_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                label3.Text = "This is a number only field";
+                label3.ForeColor = Color.Red;
+
+            }
         }
     }
 }
